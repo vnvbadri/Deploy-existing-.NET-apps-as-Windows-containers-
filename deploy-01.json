@@ -156,9 +156,9 @@
           },
           "storageProfile": {
             "imageReference": {
-              "publisher": "MicrosoftVisualStudio",
-              "offer": "VisualStudio",
-              "sku": "VS-2017-Comm-WS2016",
+              "publisher": "MicrosoftWindowsDesktop",
+              "offer": "Windows-10",
+              "sku": "rs5-pro",
               "version": "latest"
             },
             "osDisk": {
