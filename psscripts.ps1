@@ -6,6 +6,7 @@ Set-ItemProperty -Path $HKCU -Name "1407" -Value 0
 }
 enable-copypagecontent-in-internetexplorer
 
+#for Hyper-v
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
 #Install Chocolatey
