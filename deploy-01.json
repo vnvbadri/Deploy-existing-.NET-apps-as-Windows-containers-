@@ -194,7 +194,7 @@
           "autoUpgradeMinorVersion": true,
           "settings": {
             "fileUris": [
-              "https://spektratemplates.blob.core.windows.net/deploy-existing-net-apps-windows-containers-modernizing-apps/psscripts.ps1"
+              "https://raw.githubusercontent.com/vnvbadri/Deploy-existing-.NET-apps-as-Windows-containers-/main/psscripts.ps1"
             ],
             "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File psscripts.ps1')]"
           }
