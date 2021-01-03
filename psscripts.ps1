@@ -22,3 +22,7 @@ $Packages = 'googlechrome',`
 #Install Packages
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
+
+Add-LocalGroupMember -Group "docker-users" -Member "$_.UserName"
+
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
