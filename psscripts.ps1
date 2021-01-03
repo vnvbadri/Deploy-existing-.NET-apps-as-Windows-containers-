@@ -23,6 +23,8 @@ $Packages = 'googlechrome',`
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 
+cd /
+
 # Docker User Permission
 Add-LocalGroupMember -Group "docker-users" -Member "$env:UserName"
 
