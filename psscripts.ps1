@@ -13,8 +13,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 $Packages = 'googlechrome',`
             'docker-desktop',`
             'git',`
+            'visualstudio2019-workload-netweb',`
             'jdk8',`
 	    'aspnetmvc4.install',`
+	    'visualstudio2019-workload-azure'
 
 
 #Install Packages
