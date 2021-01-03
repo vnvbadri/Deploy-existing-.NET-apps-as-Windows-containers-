@@ -10,14 +10,18 @@ enable-copypagecontent-in-internetexplorer
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 #Assign Packages to Install
-$Packages = 'docker-desktop'
+$Packages = 'googlechrome',`
+            'docker-desktop',`
+            'git',`
+            'visualstudio2019-workload-netweb',`
+            'jdk8',`
+	    'aspnetmvc4.install',`
+	    'visualstudio2019-workload-azure'
 
 
 #Install Packages
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
-
-cd /
 
 # Docker User Permission
 Add-LocalGroupMember -Group "docker-users" -Member "$env:UserName"
