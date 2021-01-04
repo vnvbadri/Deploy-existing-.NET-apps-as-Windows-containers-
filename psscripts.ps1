@@ -10,7 +10,13 @@ enable-copypagecontent-in-internetexplorer
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 #Assign Packages to Install
-$Packages = 'docker-desktop'
+$Packages = 'googlechrome',`
+            'docker-desktop',`
+            'git',`
+            'visualstudio2019-workload-netweb',`
+            'jdk8',`
+	        'aspnetmvc4.install',`
+	        'visualstudio2019-workload-azure'
 
 
 #Install Packages
@@ -20,7 +26,7 @@ ForEach ($PackageName in $Packages)
 mkdir C:\windows\system32\config\systemprofile\AppData\Local\Temp
 
 # Docker User Permission
-Set-ExecutionPolicy Bypass -Scope Process -Force; Add-LocalGroupMember -Group "docker-users" -Member "demouser"
+Add-LocalGroupMember -Group "docker-users" -Member "demouser"
 
 #Enable Hyper-V
-Set-ExecutionPolicy Bypass -Scope Process -Force; Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart
