@@ -24,5 +24,3 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; Add-LocalGroupMember -Group "d
 
 #Enable Hyper-V
 Set-ExecutionPolicy Bypass -Scope Process -Force; Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-
-Restart-Computer
