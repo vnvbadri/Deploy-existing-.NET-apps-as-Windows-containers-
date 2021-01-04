@@ -23,6 +23,12 @@ $Packages = 'googlechrome',`
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 
+$path = "C:\windows\system32\config\systemprofile\AppData\Local\Temp"
+$acl = Get-Acl $path
+$AccessRule = New-Object System.Security.AccessControl.FileSystemAccessRule("$env:UserName","Modify", "ContainerInherit,ObjectInherit", "None", "Allow")
+$acl.SetAccessRule($AccessRule)
+$acl | Set-Acl $path
+
 # Docker User Permission
 Add-LocalGroupMember -Group "docker-users" -Member "$env:UserName"
 
