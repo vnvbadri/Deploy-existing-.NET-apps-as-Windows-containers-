@@ -25,7 +25,7 @@ $acl.SetAccessRule($AccessRule)
 $acl | Set-Acl $path
 
 # Docker User Permission
-Add-LocalGroupMember -Group "docker-users" -Member "$env:UserName"
+Set-ExecutionPolicy Bypass -Scope Process -Force; Add-LocalGroupMember -Group "docker-users" -Member "$env:UserName"
 
 #Enable Hyper-V
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+Set-ExecutionPolicy Bypass -Scope Process -Force; Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
