@@ -17,6 +17,7 @@ $Packages = 'docker-desktop'
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 
+mkdir C:\windows\system32\config\systemprofile\AppData\Local\Temp
 $path = "C:\windows\system32\config\systemprofile\AppData\Local\Temp"
 $acl = Get-Acl $path
 $AccessRule = New-Object System.Security.AccessControl.FileSystemAccessRule("$env:UserName","Modify", "ContainerInherit,ObjectInherit", "None", "Allow")
