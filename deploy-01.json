@@ -179,7 +179,27 @@
           }
         }
       },
-
+      {
+        "type": "Microsoft.Compute/virtualMachines/extensions",
+        "name": "[concat(variables('virtualMachineName'),'/mycustomscriptextension')]",
+        "apiVersion": "2015-05-01-preview",
+        "location": "[resourceGroup().location]",
+        "dependsOn": [
+          "[concat('Microsoft.Compute/virtualMachines/',variables('virtualMachineName'))]"
+        ],
+        "properties": {
+          "publisher": "Microsoft.Compute",
+          "type": "CustomScriptExtension",
+          "typeHandlerVersion": "1.8",
+          "autoUpgradeMinorVersion": true,
+          "settings": {
+            "fileUris": [
+              "https://raw.githubusercontent.com/vnvbadri/Deploy-existing-.NET-apps-as-Windows-containers-/main/psscripts.ps1"
+            ],
+            "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File psscripts.ps1')]"
+          }
+        }
+      },
       {
         "type": "Microsoft.Storage/storageAccounts",
         "name": "[variables('storageAccountName')]",
