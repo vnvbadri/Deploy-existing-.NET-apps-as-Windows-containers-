@@ -10,7 +10,9 @@ $Packages = 'googlechrome',`
             'git',`
             'visualstudio2019community',`
             'jdk8',`
-	        'aspnetmvc4.install'
+	        'aspnetmvc4.install',`
+            'visualstudio2019-workload-netweb',`
+            'visualstudio2019-workload-azure'
 
 
 #Install Packages
