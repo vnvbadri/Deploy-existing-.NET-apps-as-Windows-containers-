@@ -20,12 +20,14 @@ ForEach ($PackageName in $Packages)
 mkdir C:\windows\system32\config\systemprofile\AppData\Local\Temp
 $path = "C:\windows\system32\config\systemprofile\AppData\Local\Temp"
 $acl = Get-Acl $path
-$AccessRule = New-Object System.Security.AccessControl.FileSystemAccessRule("$env:UserName","Modify", "ContainerInherit,ObjectInherit", "None", "Allow")
+$AccessRule = New-Object System.Security.AccessControl.FileSystemAccessRule("vh-admin","Modify", "ContainerInherit,ObjectInherit", "None", "Allow")
 $acl.SetAccessRule($AccessRule)
 $acl | Set-Acl $path
 
 # Docker User Permission
-Set-ExecutionPolicy Bypass -Scope Process -Force; Add-LocalGroupMember -Group "docker-users" -Member "$env:UserName"
+Set-ExecutionPolicy Bypass -Scope Process -Force; Add-LocalGroupMember -Group "docker-users" -Member "vh-admin"
 
 #Enable Hyper-V
 Set-ExecutionPolicy Bypass -Scope Process -Force; Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+
+Restart-Computer
