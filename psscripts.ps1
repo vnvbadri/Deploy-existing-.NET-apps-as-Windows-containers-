@@ -20,8 +20,7 @@ ForEach ($PackageName in $Packages)
 mkdir C:\windows\system32\config\systemprofile\AppData\Local\Temp
 
 # Docker User Permission
-Set-ExecutionPolicy Bypass -Scope Process -Force; Add-LocalGroupMember -Group "docker-users" -Member "vh-admin"
+Set-ExecutionPolicy Bypass -Scope Process -Force; Add-LocalGroupMember -Group "docker-users" -Member "demouser"
 
 #Enable Hyper-V
-Set-ExecutionPolicy Bypass -Scope Process -Force; Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-A
+Set-ExecutionPolicy Bypass -Scope Process -Force; Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart
