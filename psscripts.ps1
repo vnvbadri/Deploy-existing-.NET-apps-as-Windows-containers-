@@ -8,6 +8,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 $Packages = 'googlechrome',`
             'docker-desktop',`
             'git',`
+            'wsl',`
             'visualstudio2019community',`
             'jdk8',`
             'aspnetmvc4.install',`
