@@ -22,6 +22,9 @@ mkdir C:\windows\system32\config\systemprofile\AppData\Local\Temp
 # Docker User Permission
 Set-ExecutionPolicy Bypass -Scope Process -Force; Add-LocalGroupMember -Group "docker-users" -Member "demouser"
 
+# Windows subsystem for linux version change
+wsl --set-default-version 2
+
 #Enable Hyper-V
 Set-ExecutionPolicy Bypass -Scope Process -Force; Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Containers") -All -NoRestart
 
