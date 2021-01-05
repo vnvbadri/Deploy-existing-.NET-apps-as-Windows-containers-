@@ -10,10 +10,7 @@ $Packages = 'googlechrome',`
             'wsl',`
             'visualstudio2019community',`
             'aspnetmvc4.install',`
-            'visualstudio2019-workload-netweb',`
-            'dotnet4.6',`
-            'dotnet4.6-targetpack',`
-            'netfx-4.8-devpack'
+            'visualstudio2019-workload-netweb'
 
 
 #Install Packages
