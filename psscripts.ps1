@@ -9,8 +9,8 @@ $Packages = 'googlechrome',`
             'docker-desktop',`
  #           'wsl2',`
  #           'visualstudio2019community',`
-            'aspnetmvc4.install',`
-            'visualstudio2019-workload-netweb'
+ #           'aspnetmvc4.install',`
+ #           'visualstudio2019-workload-netweb'
 
 
 #Install Packages
