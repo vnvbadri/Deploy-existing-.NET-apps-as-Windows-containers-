@@ -1,0 +1,19 @@
+{
+    "Name":  "deploying-a-dockerized-java-app-to-azure-web-app-for-containers Custom RBAC",
+    "Id":  null,
+    "IsCustom":  true,
+    "Description":  "Spektra Custom Role for deploying-a-dockerized-java-app-to-azure-web-app-for-containers",
+    "Actions":  [
+                    "Microsoft.Authorization/*/read",
+                    "Microsoft.ContainerRegistry/registries/*",
+                    "Microsoft.ContainerInstance/containerGroups",
+                    "Microsoft.Authorization/roleAssignments/write",
+                    "Microsoft.Resources/subscriptions/resourceGroups/read",
+                    "Microsoft.Sql/servers/*",
+                    "Microsoft.Sql/servers/databases/*",
+                    "Microsoft.Resources/deployments/*"
+                ],
+    "NotActions":  [
+
+                   ]
+}

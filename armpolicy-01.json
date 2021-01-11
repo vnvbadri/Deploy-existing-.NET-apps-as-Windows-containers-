@@ -1,0 +1,50 @@
+{
+    "if": {
+      "anyOf": [
+        {
+          "not": {
+            "anyOf": [
+                     {
+                     "field": "type",
+                     "like": "Microsoft.ContainerRegistry/registries/*"
+                     },
+                     {
+                     "field": "type",
+                     "like": "Microsoft.DBforMySQL/servers/*"
+                     },
+                     {
+                      "field": "type",
+                      "like": "Microsoft.Authorization/roleAssignments"
+                     },                      
+                     {
+                      "field": "type",
+                      "like": "Microsoft.Resources/deployments"
+                     },                                  
+                     {
+                     "field": "type",
+                     "in": ["Microsoft.ContainerRegistry/registries", "Microsoft.Resources/deployments", "Microsoft.Authorization/roleAssignments", "Microsoft.DBforMySQL/servers"]
+                     }
+            ]
+          }
+        },
+        {
+          "allof": [
+            {
+              "field": "type",
+              "equals": "Microsoft.ContainerRegistry/registries"
+            },
+            {
+              "not": {
+                "field": "Microsoft.ContainerRegistry/registries/sku.name",
+                "in": [ "Basic" ]
+              }
+            }
+          ]
+        }
+  
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  }
