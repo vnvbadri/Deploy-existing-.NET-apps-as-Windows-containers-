@@ -9,6 +9,13 @@
                     "Microsoft.ContainerInstance/containerGroups/*",
                     "Microsoft.Authorization/roleAssignments/write",
                     "Microsoft.Resources/subscriptions/resourceGroups/read",
+                    "Microsoft.Network/publicIPAddresses/*",
+                    "Microsoft.Network/virtualNetworks/*",
+                    "Microsoft.Network/networkSecurityGroups/*",
+                    "Microsoft.Network/networkInterfaces/*",
+                    "Microsoft.Compute/virtualMachines/*",
+                    "Microsoft.Compute/virtualMachines/extensions",
+                    "Microsoft.Storage/storageAccounts/write",
                     "Microsoft.Sql/servers/*",
                     "Microsoft.Sql/servers/databases/*",
                     "Microsoft.Resources/deployments/*"
