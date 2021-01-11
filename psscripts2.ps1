@@ -8,8 +8,9 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 $Packages = 'docker-compose',`
             'visualstudio2019community',`
             'git',`
-            'googlechrome'
-
+            'googlechrome',`
+            'aspnetmvc4.install',`
+            'visualstudio2019-workload-netweb'
 
 #Install Packages
 ForEach ($PackageName in $Packages)
