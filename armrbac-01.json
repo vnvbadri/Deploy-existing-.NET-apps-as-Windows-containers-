@@ -17,6 +17,7 @@
                     "Microsoft.Compute/virtualMachines/extensions/*",
                     "Microsoft.Storage/storageAccounts/write",
                     "Microsoft.Sql/servers/*",
+                    "Microsoft.Compute/disks/*",
                     "Microsoft.Sql/servers/databases/*",
                     "Microsoft.Resources/deployments/*"
                 ],

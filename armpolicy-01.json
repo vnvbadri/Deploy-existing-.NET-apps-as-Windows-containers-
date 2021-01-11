@@ -11,7 +11,11 @@
                      {
                       "field": "type",
                       "like": "Microsoft.Authorization/roleAssignments"
-                     },                      
+                     },       
+                     {
+                        "field": "type",
+                        "like": "Microsoft.Compute/disks"   
+                     },                                    
                      {
                       "field": "type",
                       "like": "Microsoft.Resources/deployments"
@@ -58,7 +62,7 @@
                      },                             
                      {
                      "field": "type",
-                     "in": ["Microsoft.ContainerRegistry/registries", "Microsoft.Storage/storageAccounts", "Microsoft.Network/networkInterfaces", "Microsoft.Network/networkSecurityGroups", "Microsoft.Network/publicIPAddresses", "Microsoft.Network/virtualNetworks", "Microsoft.Compute/virtualMachines/extensions", "Microsoft.Compute/virtualMachines", "Microsoft.Resources/deployments", "Microsoft.Authorization/roleAssignments", "Microsoft.ContainerInstance/containerGroups", "Microsoft.Sql/servers", "Microsoft.Sql/servers/databases"]
+                     "in": ["Microsoft.ContainerRegistry/registries", "Microsoft.Compute/disks", "Microsoft.Storage/storageAccounts", "Microsoft.Network/networkInterfaces", "Microsoft.Network/networkSecurityGroups", "Microsoft.Network/publicIPAddresses", "Microsoft.Network/virtualNetworks", "Microsoft.Compute/virtualMachines/extensions", "Microsoft.Compute/virtualMachines", "Microsoft.Resources/deployments", "Microsoft.Authorization/roleAssignments", "Microsoft.ContainerInstance/containerGroups", "Microsoft.Sql/servers", "Microsoft.Sql/servers/databases"]
                      }
             ]
           }
@@ -135,6 +139,20 @@
                 "not": {
                   "field": "Microsoft.Storage/storageAccounts/sku.name",
                   "in": [ "Standard_LRS" ]
+                }
+              }
+            ]
+          },
+          {
+            "allof": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Compute/disks"
+              },
+              {
+                "not": {
+                  "field": "Microsoft.Compute/disks/Sku.Tier",
+                  "in": [ "Standard" ]
                 }
               }
             ]
