@@ -194,9 +194,9 @@
           "autoUpgradeMinorVersion": true,
           "settings": {
             "fileUris": [
-              "https://raw.githubusercontent.com/vnvbadri/Deploy-existing-.NET-apps-as-Windows-containers-/main/psscripts.ps1"
+              "https://raw.githubusercontent.com/vnvbadri/Deploy-existing-.NET-apps-as-Windows-containers-/main/psscripts2.ps1"
             ],
-            "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File psscripts.ps1')]"
+            "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File psscripts2.ps1')]"
           }
         }
       },
