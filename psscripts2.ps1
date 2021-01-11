@@ -7,6 +7,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 #Assign Packages to Install
 $Packages = 'docker-compose',`
             'docker-cli',`
+            'git',`
+            'aspnetmvc4.install',`
             'googlechrome'
 
 
