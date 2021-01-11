@@ -5,9 +5,9 @@ Start-Transcript -Path C:\WindowsAzure\Logs\CustomscriptLogs.txt -Append
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 #Assign Packages to Install
-$Packages = 'visualstudio2019community',`
-            'aspnetmvc4.install',`
-            'visualstudio2019-workload-netweb'
+$Packages = 'docker-compose',`
+            'docker-cli',`
+            'googlechrome'
 
 
 #Install Packages
