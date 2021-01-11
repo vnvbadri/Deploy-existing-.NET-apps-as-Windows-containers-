@@ -6,7 +6,7 @@
             "anyOf": [
                      {
                      "field": "type",
-                     "like": "Microsoft.ContainerRegistry/registries/*"
+                     "like": "Microsoft.ContainerRegistry/registries"
                      },
                      {
                       "field": "type",
