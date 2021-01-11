@@ -6,7 +6,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 
 #Assign Packages to Install
 $Packages = 'docker-compose',`
-            'docker-cli',`
+            'visualstudio2019community',`
             'git',`
             'googlechrome'
 
