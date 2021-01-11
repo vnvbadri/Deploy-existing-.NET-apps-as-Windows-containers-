@@ -6,7 +6,7 @@
     "Actions":  [
                     "Microsoft.Authorization/*/read",
                     "Microsoft.ContainerRegistry/registries/*",
-                    "Microsoft.ContainerInstance/containerGroups",
+                    "Microsoft.ContainerInstance/containerGroups/*",
                     "Microsoft.Authorization/roleAssignments/write",
                     "Microsoft.Resources/subscriptions/resourceGroups/read",
                     "Microsoft.Sql/servers/*",

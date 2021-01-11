@@ -9,20 +9,28 @@
                      "like": "Microsoft.ContainerRegistry/registries/*"
                      },
                      {
-                     "field": "type",
-                     "like": "Microsoft.DBforMySQL/servers/*"
-                     },
-                     {
                       "field": "type",
                       "like": "Microsoft.Authorization/roleAssignments"
                      },                      
                      {
                       "field": "type",
                       "like": "Microsoft.Resources/deployments"
+                     }, 
+                     {
+                      "field": "type",
+                      "like": "Microsoft.ContainerInstance/containerGroups"
+                     },
+                     {
+                      "field": "type",
+                      "like": "Microsoft.Sql/servers"
+                     },
+                     {
+                      "field": "type",
+                      "like": "Microsoft.Sql/servers/databases"
                      },                                  
                      {
                      "field": "type",
-                     "in": ["Microsoft.ContainerRegistry/registries", "Microsoft.Resources/deployments", "Microsoft.Authorization/roleAssignments", "Microsoft.DBforMySQL/servers"]
+                     "in": ["Microsoft.ContainerRegistry/registries", "Microsoft.Resources/deployments", "Microsoft.Authorization/roleAssignments", "Microsoft.ContainerInstance/containerGroups", "Microsoft.Sql/servers", "Microsoft.Sql/servers/databases"]
                      }
             ]
           }
@@ -40,7 +48,21 @@
               }
             }
           ]
-        }
+        },
+        {
+            "allof": [
+              {
+                "field": "type",
+                "equals": "Microsoft.ContainerInstance/containerGroups"
+              },
+              {
+                "not": {
+                  "field": "Microsoft.ContainerInstance/containerGroups/sku.name",
+                  "in": [ "Standard" ]
+                }
+              }
+            ]
+          }        
   
       ]
     },
