@@ -48,22 +48,8 @@
               }
             }
           ]
-        },
-        {
-            "allof": [
-              {
-                "field": "type",
-                "equals": "Microsoft.ContainerInstance/containerGroups"
-              },
-              {
-                "not": {
-                  "field": "Microsoft.ContainerInstance/containerGroups/sku.name",
-                  "in": [ "Standard" ]
-                }
-              }
-            ]
-          }        
-  
+        }     
+        
       ]
     },
     "then": {
