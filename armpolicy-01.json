@@ -15,7 +15,15 @@
                      {
                         "field": "type",
                         "like": "Microsoft.Compute/disks"   
-                     },                                    
+                     },
+                     {
+                      "field": "type",
+                      "like": "Microsoft.ContainerRegistry/registries/push"   
+                     },                                                          
+                     {
+                      "field": "type",
+                      "like": "Microsoft.ContainerRegistry/registries/pull"   
+                     }, 
                      {
                       "field": "type",
                       "like": "Microsoft.Resources/deployments"
