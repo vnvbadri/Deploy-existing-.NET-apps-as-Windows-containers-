@@ -6,8 +6,8 @@
     "Actions":  [
                     "Microsoft.Authorization/*/read",
                     "Microsoft.ContainerRegistry/registries/*",
-                    "Microsoft.ContainerRegistry/registries/push/write",
-                    "Microsoft.ContainerRegistry/registries/pull/write",
+                    "Microsoft.ContainerRegistry/registries/push/*",
+                    "Microsoft.ContainerRegistry/registries/pull/*",
                     "Microsoft.ContainerInstance/containerGroups/*",
                     "Microsoft.Authorization/roleAssignments/write",
                     "Microsoft.Resources/subscriptions/resourceGroups/read",
