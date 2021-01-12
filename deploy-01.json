@@ -11,7 +11,6 @@
     },
     "variables": {
       "networkSecurityGroupName": "labvm-nsg",
-      "location": "[variables('location')]",
       "virtualNetworkName": "labvm-vnet",
       "addressPrefix": "10.0.0.0/24",
       "subnetPrefix": "10.0.0.0/24",
@@ -44,7 +43,7 @@
         "name": "[variables('networkSecurityGroupName')]",
         "type": "Microsoft.Network/networkSecurityGroups",
         "apiVersion": "2017-06-01",
-        "location": "[variables('location')]",
+        "location": "[resourceGroup().location]",
         "properties": {
           "securityRules": [
 
@@ -69,7 +68,7 @@
         "name": "[variables('virtualNetworkName')]",
         "type": "Microsoft.Network/virtualNetworks",
         "apiVersion": "2017-08-01",
-        "location": "[variables('location')]",
+        "location": "[resourceGroup().location]",
         "dependsOn": [
           "[concat('Microsoft.Network/networkSecurityGroups/',variables('networkSecurityGroupName'))]"
         ],
@@ -93,7 +92,7 @@
         "name": "[variables('publicIpAddressName')]",
         "type": "Microsoft.Network/publicIpAddresses",
         "apiVersion": "2017-08-01",
-        "location": "[variables('location')]",
+        "location": "[resourceGroup().location]",
         "sku": {
           "name": "Basic"
         },
@@ -109,7 +108,7 @@
         "name": "[variables('dsvmNetworkInterfaceName')]",
         "type": "Microsoft.Network/networkInterfaces",
         "apiVersion": "2016-09-01",
-        "location": "[variables('location')]",
+        "location": "[resourceGroup().location]",
         "dependsOn": [
           "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]",
           "[concat('Microsoft.Network/publicIpAddresses/', variables('publicIpAddressName'))]"
@@ -138,7 +137,7 @@
         "name": "[variables('virtualMachineName')]",
         "type": "Microsoft.Compute/virtualMachines",
         "apiVersion": "2016-04-30-preview",
-        "location": "[variables('location')]",
+        "location": "[resourceGroup().location]",
 
         "dependsOn": [
           "[concat('Microsoft.Network/networkInterfaces/', variables('dsvmnetworkInterfaceName'))]"
@@ -184,7 +183,7 @@
         "type": "Microsoft.Compute/virtualMachines/extensions",
         "name": "[concat(variables('virtualMachineName'),'/mycustomscriptextension')]",
         "apiVersion": "2015-05-01-preview",
-        "location": "[variables('location')]",
+        "location": "[resourceGroup().location]",
         "dependsOn": [
           "[concat('Microsoft.Compute/virtualMachines/',variables('virtualMachineName'))]"
         ],
@@ -205,7 +204,7 @@
         "type": "Microsoft.Storage/storageAccounts",
         "name": "[variables('storageAccountName')]",
         "apiVersion": "2016-01-01",
-        "location": "[variables('location')]",
+        "location": "[resourceGroup().location]",
         "sku": {
           "name": "[variables('storageAccountType')]"
         },
