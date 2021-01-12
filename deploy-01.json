@@ -11,7 +11,7 @@
     },
     "variables": {
       "networkSecurityGroupName": "labvm-nsg",
-      "location": "[resourceGroup().location]",
+      "location": "[variables('location')]",
       "virtualNetworkName": "labvm-vnet",
       "addressPrefix": "10.0.0.0/24",
       "subnetPrefix": "10.0.0.0/24",
