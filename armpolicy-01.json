@@ -70,7 +70,7 @@
                      },                             
                      {
                      "field": "type",
-                     "in": ["Microsoft.ContainerRegistry/registries", "Microsoft.Compute/disks", "Microsoft.Storage/storageAccounts", "Microsoft.Network/networkInterfaces", "Microsoft.Network/networkSecurityGroups", "Microsoft.Network/publicIPAddresses", "Microsoft.Network/virtualNetworks", "Microsoft.Compute/virtualMachines/extensions", "Microsoft.Compute/virtualMachines", "Microsoft.Resources/deployments", "Microsoft.Authorization/roleAssignments", "Microsoft.ContainerInstance/containerGroups", "Microsoft.Sql/servers", "Microsoft.Sql/servers/databases"]
+                     "in": ["Microsoft.ContainerRegistry/registries", "Microsoft.ContainerRegistry/registries/pull", "Microsoft.ContainerRegistry/registries/push", "Microsoft.Compute/disks", "Microsoft.Storage/storageAccounts", "Microsoft.Network/networkInterfaces", "Microsoft.Network/networkSecurityGroups", "Microsoft.Network/publicIPAddresses", "Microsoft.Network/virtualNetworks", "Microsoft.Compute/virtualMachines/extensions", "Microsoft.Compute/virtualMachines", "Microsoft.Resources/deployments", "Microsoft.Authorization/roleAssignments", "Microsoft.ContainerInstance/containerGroups", "Microsoft.Sql/servers", "Microsoft.Sql/servers/databases"]
                      }
             ]
           }
